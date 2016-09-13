@@ -1,0 +1,17 @@
+var image = new SimpleImage(200,200);
+w = 200/3;
+
+for (var p of image.values()) {
+    x = p.getX();
+    y = p.getY();
+    if (y >= 2 * w) {
+        p.setBlue(255);
+    }
+    else if (x >= w && y >= w && y < 2 * w) {
+        p.setGreen(255);
+    }
+    else {
+        p.setRed(255);
+    }
+}
+print (image);

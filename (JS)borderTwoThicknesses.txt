@@ -1,0 +1,22 @@
+function setBlack(pixel){
+    pixel.setRed(0);
+    pixel.setGreen(0);
+    pixel.setBlue(0);
+}
+function pixelOnVerticalEdge(pixel,image,borderWidth){
+    var x = pixel.getX();
+    if (x <= borderWidth || x >= image.getWidth() - borderWidth) return true;
+    return false;
+}
+function pixelOnHorizontalEdge(pixel,image,borderWidth){
+    var y = pixel.getY();
+    if (y <= borderWidth || y >= image.getHeight() - borderWidth) return true;
+    return false;
+}
+var image = new SimpleImage("eastereggs.jpg");
+for (var pixel of image.values()){
+    if (pixelOnVerticalEdge(pixel,image,20) || pixelOnHorizontalEdge(pixel,image,10)){
+        pixel = setBlack(pixel);
+    }
+}
+print (image);

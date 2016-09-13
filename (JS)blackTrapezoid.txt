@@ -1,0 +1,13 @@
+var image = new SimpleImage(200,200);
+
+for (var p of image.values()) {
+    x = p.getX();
+    y = p.getY();
+    if (x < y && x + y < 200 && x <= 20) {
+        p.setRed(0);
+    }
+    else {
+        p.setRed(255);
+    }
+}
+print (image);

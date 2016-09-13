@@ -1,0 +1,12 @@
+function swapRedGreen(pixel){
+    var oldRed = pixel.getRed();
+    var oldGreen = pixel.getGreen();
+    pixel.setRed(oldGreen);
+    pixel.setGreen(oldRed);
+}
+var image = new SimpleImage("eastereggs.jpg");
+print (image);
+for (var pixel of image.values()){
+    pixel = swapRedGreen(pixel);
+}
+print (image);

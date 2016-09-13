@@ -1,0 +1,15 @@
+function moreRed(pixel,value){
+    var oldRed = pixel.getRed();
+    if (oldRed <= 255 - value){
+        pixel.setRed(oldRed + value);
+    }
+    else {
+        pixel.setRed(255);
+    }
+}
+var image = new SimpleImage("eastereggs.jpg");
+print (image);
+for (var pixel of image.values()){
+    pixel = moreRed(pixel,100);
+}
+print (image);

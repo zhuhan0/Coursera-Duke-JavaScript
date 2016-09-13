@@ -1,0 +1,14 @@
+var image = new SimpleImage("hilton.jpg");
+
+for (var p of image.values()) {
+    if (p.getX() < 140/3) {
+        p.setRed(255);
+    }
+    if (p.getX() >= 140/3 && p.getX() < 280/3) {
+        p.setGreen(255);
+    }
+    if (p.getX() >= 280/3) {
+        p.setBlue(255);
+    }
+}
+print(image);
